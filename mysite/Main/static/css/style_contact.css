@@ -1,0 +1,61 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #222;
+}
+
+.contact {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contact h2 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  margin-top: 60px;
+  flex-wrap: wrap; /* чтобы красиво выглядело на мобильных */
+}
+
+.contact-item {
+  text-align: center;
+  max-width: 220px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.contact-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: #777;
+  margin-top: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог букетов</title>
+    <link rel="stylesheet" href="{% static 'css/style_catalog.css' %}">
+</head>
+<body>
+    {% load static %}
+    <div class="page">
+        <header class="header">
+            <div class="header-text">
+                <h1>ПЕРЕДАЁМ ЧУВСТВА<br>ЧЕРЕЗ ЦВЕТЫ</h1>
+            </div>
+            <div class="header-links">
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </header>
+
+        <section class="catalog">
+            <h2>КАТАЛОГ</h2>
+            <div class="filter-buttons">
+                <button onclick="location.href='#'",class="active">все позиции</button>
+                <button onclick="location.href='#'">моно букеты</button>
+                <button onclick="location.href='#'">для невесты</button>
+                <button onclick="location.href='#'">авторские букеты</button>
+                <button onclick="location.href='#'">корзины</button>
+                <button onclick="location.href='#'">подарки</button>
+            </div>
+
+            <div class="items">
+                {% for i in "123456"|make_list %}
+                <div class="item">
+                    <img src="https://i.pinimg.com/1200x/12/c3/b3/12c3b3ad2935ced3af9608eec4e3489f.jpg" alt="Букет">
+                    <p class="item-title">Монобукет из тюльпанов</p>
+                    <p class="item-price">3 000 ₽</p>
+                    <button onclick="location.href='#'",class="buy-btn">Оформить доставку</button>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="extra">
+            <h2>ДОПОЛНИТЕЛЬНО К БУКЕТУ</h2>
+            <div class="extra-list">
+                <div class="extra-item">
+                    <p class="extra-name">ПЕРСОНАЛЬНАЯ ОТКРЫТКА</p>
+                    <p class="extra-desc">Мы напечатаем вашу подпись или послание на стильной открытке.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+                <div class="extra-item">
+                    <p class="extra-name">СЛАДКИЙ ПОДАРОК</p>
+                    <p class="extra-desc">Добавим в букет конфеты, шоколад или десерт на выбор.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+                <div class="extra-item">
+                    <p class="extra-name">АРОМАТИЗАЦИЯ БУКЕТА</p>
+                    <p class="extra-desc">Лёгкий цветочный аромат сохраняется дольше благодаря специальному спрею.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+                <div class="extra-item">
+                    <p class="extra-name">АНОНИМНАЯ ДОСТАВКА</p>
+                    <p class="extra-desc">Получатель не узнает, от кого подарок — если вы не захотите.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+                <div class="extra-item">
+                    <p class="extra-name">ЦВЕТОЧНАЯ ПОДПИСКА</p>
+                    <p class="extra-desc">Регулярные доставки свежих букетов — каждую неделю или месяц.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+                <div class="extra-item">
+                    <p class="extra-name">СРОЧНАЯ ДОСТАВКА</p>
+                    <p class="extra-desc">Доставим букет в течение 2 часов после оформления заказа.</p>
+                    <p class="extra-price">500 ₽</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

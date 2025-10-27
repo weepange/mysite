@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветы | Luxury Flow</title>
+    {% load static %}
+    <link rel = 'stylesheet' href = '{% static 'css/style.css' %}'
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="logo">LUXURY FLOW</div>
+        <nav class="nav">
+            <a href="{% url 'catalog' %}">Каталог</a>
+            <a href="#">Оплата и доставка</a>
+            <a href="{% url 'contacts' %}">Контакты</a>
+        </nav>
+        <div class="icons">
+            <span>♡</span>
+            <span>👜</span>
+        </div>
+    </header>
+
+    <!-- Главный блок -->
+    <section class="hero">
+        {% load static %}
+        <img src="{%static 'images/image.png' %}" alt="Букет" class="hero-bg">
+        <div class="hero-content">
+            <h1>ЦВЕТЫ</h1>
+            <p>которые делают вас счастливее</p>
+            <button onclick="location.href='{% url 'catalog' %}'">перейти в каталог</button>
+        </div>
+    </section>
+
+    <!-- Блок: Хиты весны -->
+    <section class="hits">
+        <h2>ХИТЫ ВЕСНЫ</h2>
+        <div class="cards">
+            <div class="card">
+                {% load static %}
+                <img src="{%static 'images/bk1.png' %}" alt="Букет сборный">
+                <h3>БУКЕТ СБОРНЫЙ</h3>
+                <p>Соберем букет по вашим референсам</p>
+                <div class="buttons">
+                    <button class="btn-light">Подробнее</button>
+                    <button class="btn-dark">Заказать</button>
+                </div>
+            </div>
+            <div class="card">
+                {% load static %}
+                <img src="{%static 'images/bk2.png' %}" alt="На 8 марта">
+                <h3>НА 8 МАРТА</h3>
+                <p>Идеально к празднику</p>
+                <div class="buttons">
+                    <button onclick="location.href='#'", class="btn-light">Подробнее</button>
+                    <button onclick="location.href='#'", class="btn-dark">Заказать</button>
+                </div>
+            </div>
+            <div class="card">
+                {% load static %}
+                <img src="{% static 'images/bk3.png' %}" alt="Дизайнерский">
+                <h3>ДИЗАЙНЕРСКИЙ</h3>
+                <p>Топовый флорист соберет букет для вас</p>
+                <div class="buttons">
+                    <button onclick="location.href='#'", class="btn-light">Подробнее</button>
+                    <button onclick="location.href='#'", class="btn-dark">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок: Креатив / Эстетика / Качество -->
+    <section class="values">
+        {% load static %}
+    <div class="value" style="background-image: url('{% static "images/fl1.png" %}')">
+            <h2>КРЕАТИВ</h2>
+        </div>
+        {% load static %}
+    <div class="value" style="background-image: url('{% static "images/fl2.png" %}')">
+            <h2>ЭСТЕТИКА</h2>
+        </div>
+        {% load static %}
+    <div class="value" style="background-image: url('{% static "images/fl3.png" %}')">
+            <h2>КАЧЕСТВО</h2>
+        </div>
+    </section>
+</body>
+</html>
