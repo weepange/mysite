@@ -25,5 +25,5 @@ urlpatterns = [
     path('',views.main,name='main'),
     path('contacts/',views.contacts,name='contacts'),
     path('catalog/',views.catalog,name='catalog'),
-    
+    path('payment/',views.payment,name='payment'),
 ]

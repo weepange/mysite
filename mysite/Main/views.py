@@ -10,3 +10,7 @@ def contacts(request):
 
 def catalog(request):
     return render(request, 'catalog.html')
+
+def payment(request):
+    return render(request, 'payment.html')
+
