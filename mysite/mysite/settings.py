@@ -75,10 +75,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Настройка базы данных MySQL , немного навайбкодил и буду разбираться с Максом позже
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',  # Название твоей базы данных
+        'USER': 'your_mysql_user',      # Твой пользователь MySQL
+        'PASSWORD': 'your_mysql_password', # Твой пароль MySQL
+        'HOST': 'localhost',             # Или IP-адрес твоего сервера MySQL
+        'PORT': '3306',                  # Порт по умолчанию для MySQL
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
@@ -123,3 +131,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import pymysql
+pymysql.install_as_MySQLdb()
