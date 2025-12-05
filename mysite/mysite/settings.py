@@ -9,18 +9,6 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
-import os
-
-# BASE_DIR уже должен быть определен
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Добавь в конец settings.py
-MEDIA_URL = '/media/'  # URL для медиа-файлов
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Папка для загрузки файлов
-# Убедись, что DEBUG = True для разработки
-DEBUG = True
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,12 +22,11 @@ SECRET_KEY = 'django-insecure-7thtc_g=2r=%mm)9#s)prf#^y)j1lvaha60#&3(eygxryn=$t%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#Если доп приложения прикладываются к сайту то они прописываются здесь в INSTALLED_APPS
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -66,6 +53,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            #Путь к файлам HTML
             BASE_DIR / 'mysite/templates'
         ],
         'APP_DIRS': True,
@@ -156,6 +144,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#Подгрузка медиа
+# BASE_DIR = находит корень проекта автоматически
+# MEDIA_URL = "по какому адресу в браузере искать файлы"
+# MEDIA_ROOT = "в какой папке на диске лежат файлы"
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_URL = '/media/'  # URL для медиа-файлов
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')# Папка для загрузки файлов
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
