@@ -10,6 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
+
+# BASE_DIR уже должен быть определен
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Добавь в конец settings.py
+MEDIA_URL = '/media/'  # URL для медиа-файлов
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Папка для загрузки файлов
+# Убедись, что DEBUG = True для разработки
+DEBUG = True
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

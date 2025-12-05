@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-
-from Main import views
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static 
+from Main import views  
 
 
 urlpatterns = [
@@ -27,3 +28,9 @@ urlpatterns = [
     path('catalog/',views.catalog,name='catalog'),
     path('payment/',views.payment,name='payment'),
 ]
+
+# static() = "Эй Django, раздавай файлы из этой папки по этому URL"
+# if DEBUG: = "Но только когда мы в разработке, на продакшене этим займется Nginx"
+# Без этого → картинки не отображаются, файлы не доступны
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

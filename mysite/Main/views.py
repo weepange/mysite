@@ -13,4 +13,3 @@ def catalog(request):
 
 def payment(request):
     return render(request, 'payment.html')
-
