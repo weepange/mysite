@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Main'
+    'Main',
 ]
 
 MIDDLEWARE = [
@@ -75,13 +74,33 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Настройка базы данных MySQL , немного навайбкодил и буду разбираться с Максом позже
+# Настройка базы данных MySQL , отдельно настраивается для сервера и делаются миграции БД
+#mysql -u root 
+#-- 1. Создай базу данных
+# CREATE DATABASE IF NOT EXISTS django_db;
+
+# -- 2. Создай пользователя
+# CREATE USER IF NOT EXISTS 'django_user'@'localhost' IDENTIFIED BY 'django123';
+
+# -- 3. Дай права
+# GRANT ALL PRIVILEGES ON django_db.* TO 'django_user'@'localhost';
+
+# -- 4. Примени изменения
+# FLUSH PRIVILEGES;
+
+# -- 5. Проверь
+# SHOW DATABASES;
+# SELECT user, host FROM mysql.user;
+
+# -- 6. Выйди
+# exit;
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_database_name',  # Название твоей базы данных
-        'USER': 'your_mysql_user',      # Твой пользователь MySQL
-        'PASSWORD': 'your_mysql_password', # Твой пароль MySQL
+        'NAME': 'django_db',  # Название твоей базы данных
+        'USER': 'django_user',      # Твой пользователь MySQL
+        'PASSWORD': 'django123', # Твой пароль MySQL
         'HOST': 'localhost',             # Или IP-адрес твоего сервера MySQL
         'PORT': '3306',                  # Порт по умолчанию для MySQL
         'OPTIONS': {
@@ -131,6 +150,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-import pymysql
-pymysql.install_as_MySQLdb()
