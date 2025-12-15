@@ -6,6 +6,7 @@
     <title>Цветы | Luxury Flow</title>
     {% load static %}
     <link rel = 'stylesheet' href = '{% static 'css/style.css' %}'
+    <link rel="icon" href="{% static 'image/logo.png' %}">
 </head>
 <body>
     <!-- Навигация -->
@@ -13,29 +14,29 @@
         <div class="logo">LUXURY FLOW</div>
         <nav class="nav">
             <a href="{% url 'catalog' %}">Каталог</a>
-            <a href="#">Оплата и доставка</a>
+            <a href="{% url 'payment' %}">Оплата и доставка</a>
             <a href="{% url 'contacts' %}">Контакты</a>
         </nav>
         <div class="icons">
-            <span>♡</span>
-            <span>👜</span>
+            <span><p>Нравица</p></span>
+            <span><p>Корзина</p></span>
         </div>
     </header>
 
     <!-- Главный блок -->
     <section class="hero">
         {% load static %}
-        <img src="{%static 'images/image.png' %}" alt="Букет" class="hero-bg">
-        <div class="hero-content">
-            <h1>ЦВЕТЫ</h1>
-            <p>которые делают вас счастливее</p>
-            <button onclick="location.href='{% url 'catalog' %}'">перейти в каталог</button>
+        <img src="{% static 'images/imageee.png' %}" alt="Букет" class="hero-bg">
+        <div class="hero-content"> 
+            <div class='oval'><h1>ЦВЕТЫ</h1>
+            <p>которые делают вас счастливее</p> 
+            <button onclick="location.href='{% url 'catalog' %}'">перейти в каталог</button></div>
         </div>
     </section>
 
     <!-- Блок: Хиты весны -->
     <section class="hits">
-        <h2>ХИТЫ ВЕСНЫ</h2>
+        <h2>ХИТЫ ЗИМЫ</h2>
         <div class="cards">
             <div class="card">
                 {% load static %}
@@ -50,8 +51,8 @@
             <div class="card">
                 {% load static %}
                 <img src="{%static 'images/bk2.png' %}" alt="На 8 марта">
-                <h3>НА 8 МАРТА</h3>
-                <p>Идеально к празднику</p>
+                <h3>К ОСОБОМУ СЛУЧАЮ</h3>
+                <p>Идеально к вашему празднику</p>
                 <div class="buttons">
                     <button onclick="location.href='#'", class="btn-light">Подробнее</button>
                     <button onclick="location.href='#'", class="btn-dark">Заказать</button>
@@ -73,15 +74,15 @@
     <!-- Блок: Креатив / Эстетика / Качество -->
     <section class="values">
         {% load static %}
-    <div class="value" style="background-image: url('{% static "images/fl1.png" %}')">
+    <div class="value" style="background-image: url('{% static "images/fn.png" %}')">
             <h2>КРЕАТИВ</h2>
         </div>
         {% load static %}
-    <div class="value" style="background-image: url('{% static "images/fl2.png" %}')">
+    <div class="value" style="background-image: url('{% static "images/fn1.png" %}')">
             <h2>ЭСТЕТИКА</h2>
         </div>
         {% load static %}
-    <div class="value" style="background-image: url('{% static "images/fl3.png" %}')">
+    <div class="value" style="background-image: url('{% static "images/fn2.png" %}')">
             <h2>КАЧЕСТВО</h2>
         </div>
     </section>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина и оплата</title>
+    <link rel="stylesheet" href="{% static 'css/style_payment.css' %}">
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="logo">LUXURY FLOW</div>
+        <nav class="nav">
+            <p>Место оплаты вашего самого лучшего букетика</p>
+        </nav>
+        <nav class="maint">
+            <a href="{% url 'main' %}">Главное меню</a>
+        </nav>
+    </header>
+    
+    <!--Центр-->
+    <main class="main-content">
+        <p> мяу-мяу-мяу-мяу </p>
+        <p style='font-size: 20px; font-weight:lighter;'>ты еще ничего не выбрал &lpar;</p>
+    </main>
+    
+
+    <!-- Навигация -->
+    <footer class="footer">
+        <div class="logo">LUXURY FLOW</div>
+        <nav class="nav">
+            <p>Место оплаты вашего самого лучшего букетика</p>
+        </nav>
+    </footer>
+</body>
+</html>
