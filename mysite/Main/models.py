@@ -13,8 +13,6 @@ class Product(models.Model):
         ('WEDDING', '#свадебные_букеты'),
         ('BUSINESS', '#деловые_букеты'),
     ]
-
-    
     # Разделение по категориям, чтобы в дальнейшем было удобно их фильтровать
     category = models.CharField(
         max_length=20,
